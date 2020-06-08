@@ -13,7 +13,6 @@ import (
 
 func main() {
 	var polygon, point string
-	// var pointInside bool
 	var coordPolygonArrStr, coordPointArrStr []string
 	var longitudePolygon, latitudePolygon, coordPoint []float64 // долгота, широта
 	polygon = "{\n      \"type\": \"Feature\",\n      \"properties\": {},\n      \"geometry\": {\n        \"type\": \"Polygon\",\n        \"coordinates\": [\n          [\n            [\n              43.448342084884644,\n              56.23708370966285\n            ],\n            [\n              43.44818115234375,\n              56.23471050828792\n            ],\n            [\n              43.4518826007843,\n              56.23475224928091\n            ],\n            [\n              43.45214009284973,\n              56.23667228578949\n            ],\n            [\n              43.448342084884644,\n              56.23708370966285\n            ]\n          ]\n        ]\n      }"
@@ -30,7 +29,6 @@ func main() {
 }
 
 func isPointInside(x []float64, y []float64, coordPoint []float64) bool {
-	// многоугольник = 3 вершинам минимум. точку и отрезок игнорируем
 	// x - широта (latitude), y - долгота(longitude)
 
 	var i, j int
@@ -78,8 +76,6 @@ func fromStrToFloatArr(arrayString []string) ([]float64, []float64) {
 			la++
 		}
 	}
-	// sort.Float64s(longit)
-	// sort.Float64s(latid)
 
 	return longit, latid
 }
